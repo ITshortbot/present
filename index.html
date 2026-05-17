@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Kartavya! 🎂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="bg-layer"><div class="gradient-orb orb-1"></div><div class="gradient-orb orb-2"></div><div class="gradient-orb orb-3"></div><div class="gradient-orb orb-4"></div></div>
+    <div class="particles-container" id="particlesContainer"></div>
+    <div class="sparkles-container" id="sparklesContainer"></div>
+
+    <!-- SCREEN 0: LANDING -->
+    <section class="screen active" id="screen0">
+        <div class="screen-inner center-content">
+            <div class="landing-content">
+                <p class="hw anim-fd" style="animation-delay:.3s">A little surprise from your people ✨</p>
+                <h1 class="main-heading anim-fu" style="animation-delay:.6s">Happy Birthday<br><span class="name-hl">Kartavya!</span> <span class="emoji-bounce">🎂</span></h1>
+                <p class="sub-text anim-fu" style="animation-delay:.9s">We made something special just for you</p>
+                <div class="glass-card landing-card anim-si" style="animation-delay:1.2s">
+                    <div class="mini-cake-wrap"><div class="mini-cake"><div class="candle-row-mini"><div class="mc"><div class="mf"></div></div><div class="mc"><div class="mf"></div></div><div class="mc"><div class="mf"></div></div></div><div class="ct"></div><div class="cm"></div><div class="cb"></div></div></div>
+                    <p class="card-text">Your friends got together and built this little corner of the internet just for you 🤍</p>
+                    <div class="divider"><span class="dv-dot"></span><span class="dv-line"></span><span class="dv-star">⭐</span><span class="dv-line"></span><span class="dv-dot"></span></div>
+                    <button class="btn btn-primary anim-fu" id="btnOpen" style="animation-delay:1.6s"><span>OPEN MY SURPRISE</span> 🎁</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 1: RIDDLE -->
+    <section class="screen" id="screen1">
+        <div class="screen-inner center-content">
+            <div class="riddle-wrap">
+                <div class="riddle-card glass-card aoe">
+                    <div class="riddle-header">
+                        <span class="riddle-emoji">🔮</span>
+                        <p class="hw" style="font-size:1.4rem;margin-bottom:.2rem">Before you enter...</p>
+                        <h2 class="riddle-title">Solve the Riddle</h2>
+                        <p class="riddle-sub">Answer correctly to unlock your surprise ✨</p>
+                    </div>
+                    <div class="riddle-body">
+                        <div class="riddle-poem">
+                            <p>Only 24 hours between our special days,</p>
+                            <p>Same Jain souls with matching ways.</p>
+                            <p>Just 6 months, yet so close somehow,</p>
+                            <p>Not by blood, but family now.</p>
+                            <p class="riddle-question">What are you to me? 💖</p>
+                        </div>
+                        <div class="riddle-input-wrap">
+                            <input type="text" class="riddle-input" id="riddleInput" placeholder="Type your answer..." autocomplete="off">
+                            <button class="btn btn-primary riddle-submit" id="riddleSubmit">Check Answer ✨</button>
+                        </div>
+                        <p class="riddle-hint" id="riddleHint"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- GATE OVERLAY -->
+            <div class="gate-overlay" id="gateOverlay">
+                <div class="gate-left" id="gateLeft">
+                    <div class="gate-pattern"></div>
+                    <div class="gate-handle-left"></div>
+                </div>
+                <div class="gate-right" id="gateRight">
+                    <div class="gate-pattern"></div>
+                    <div class="gate-handle-right"></div>
+                </div>
+                <div class="gate-glow" id="gateGlow"></div>
+                <div class="gate-message" id="gateMessage">
+                    <p class="hw" style="font-size:2rem;color:#fff">Welcome in my princess! 💗</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 2: HUB -->
+    <section class="screen" id="screen2">
+        <div class="screen-inner center-content">
+            <div class="hub-wrap">
+                <div class="hub-topbar">
+                    <button class="topbar-pill" id="bgMusicBtn" onclick="toggleBgMusic()">🎵 Play Music <span class="eq-bars"><i></i><i></i><i></i></span></button>
+                    <span class="topbar-pill pill-right">Made with love 💗</span>
+                </div>
+                <div class="hub-header aoe">
+                    <p class="hw" style="font-size:1.3rem">Welcome to your special place ✨</p>
+                    <h2 class="hub-title">Hey Kartavya!</h2>
+                    <p class="hub-sub">Everything here is just for you 💗</p>
+                </div>
+                <div class="divider"><span class="dv-dot"></span><span class="dv-line"></span><span class="dv-star">♡</span><span class="dv-line"></span><span class="dv-dot"></span></div>
+                <div class="hub-grid">
+                    <div class="hub-card aoe" onclick="goToScreen(3)"><div class="hub-icon-circle"><span class="hub-icon">📸</span></div><h3 class="hub-card-title">Photos</h3><p class="hub-card-desc">A collection of our beautiful moments 💗</p><button class="btn btn-primary hub-btn">Open →</button></div>
+                    <div class="hub-card aoe" onclick="goToScreen(4)"><div class="hub-icon-circle"><span class="hub-icon">💌</span></div><h3 class="hub-card-title">Letters</h3><p class="hub-card-desc">Heartfelt letters, written just for you 💗</p><button class="btn btn-primary hub-btn">Open →</button></div>
+                    <div class="hub-card aoe" onclick="goToScreen(6)"><div class="hub-icon-circle"><span class="hub-icon">🎁</span></div><h3 class="hub-card-title">Gift</h3><p class="hub-card-desc">A special surprise waiting for you 💗</p><button class="btn btn-primary hub-btn">Open →</button></div>
+                    <div class="hub-card aoe" onclick="goToScreen(5)"><div class="hub-icon-circle"><span class="hub-icon">🌸</span></div><h3 class="hub-card-title">Sakura</h3><p class="hub-card-desc">A blooming wish tree just for you 💗</p><button class="btn btn-primary hub-btn">Open →</button></div>
+                </div>
+                <div class="hub-quote aoe"><span class="qm">❝</span> You mean the world to us 💗 ✨ <span class="qm">❞</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 3: PHOTOS -->
+    <section class="screen" id="screen3">
+        <div class="screen-inner scroll-content">
+            <div class="page-container">
+                <button class="back-btn" onclick="goToScreen(2)">← Back to Hub</button>
+                <header class="page-header aoe"><p class="hw">memories we love 📸</p><h2 class="page-title">Your Photo Wall</h2><p class="page-sub">Every picture tells our story</p></header>
+                <div class="pinterest-grid">
+                    <div class="pin-card aoe"><div class="pin-img-wrap"><img src="1.jpeg" alt="Kartavya"><div class="pin-ov"><span class="pin-heart">♡</span></div></div><div class="pin-info"><p class="pin-cap">Looking absolutely stunning 🌟</p><span class="pin-tag">queen</span></div></div>
+                    <div class="pin-card pin-note aoe"><div class="note-inner"><div class="note-icon">🎉</div><p class="note-text">"The world is better because you're in it."</p><p class="note-sign">— your forever squad</p></div></div>
+                    <div class="pin-card aoe"><div class="pin-img-wrap"><img src="2.jpeg" alt="Kartavya"><div class="pin-ov"><span class="pin-heart">♡</span></div></div><div class="pin-info"><p class="pin-cap">Effortlessly gorgeous, always 🌸</p><span class="pin-tag">ethereal</span></div></div>
+                    <div class="pin-card aoe"><div class="pin-img-wrap"><img src="3.jpeg" alt="Kartavya"><div class="pin-ov"><span class="pin-heart">♡</span></div></div><div class="pin-info"><p class="pin-cap">Squad goals, every single time ✨</p><span class="pin-tag">besties</span></div></div>
+                    <div class="pin-card pin-reasons aoe"><div class="reasons-inner"><h3 class="reasons-title">Why you're the best</h3><ul class="reasons-list"><li><span class="re">🦋</span>Your laugh is literally contagious</li><li><span class="re">🌙</span>You hype everyone up like no one else</li><li><span class="re">🌻</span>Kindest soul in any room</li><li><span class="re">💫</span>You make boring days fun</li><li><span class="re">🤍</span>Irreplaceable. Period.</li></ul></div></div>
+                    <div class="pin-card aoe"><div class="pin-img-wrap"><img src="4.jpeg" alt="Kartavya"><div class="pin-ov"><span class="pin-heart">♡</span></div></div><div class="pin-info"><p class="pin-cap">Candid you = best you 🫶</p><span class="pin-tag">candid</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 4: LETTERS -->
+    <section class="screen" id="screen4">
+        <div class="screen-inner scroll-content">
+            <div class="page-container">
+                <button class="back-btn" onclick="goToScreen(2)">← Back to Hub</button>
+                <header class="page-header aoe"><p class="hw">words from the heart 💌</p><h2 class="page-title">Letters For You</h2><p class="page-sub">Your friends wrote these just for today</p></header>
+                <div class="letters-grid">
+                    <div class="letter-card aoe" id="letter1"><div class="envelope" onclick="openLetter('letter1')"><div class="env-flap"></div><div class="env-body"><span class="env-label">From: Atharva</span><span class="env-emoji">💌</span><span class="env-hint">tap to open</span></div></div><div class="letter-content"><div class="letter-paper"><button class="lclose" onclick="closeLetter('letter1')">✕</button><p class="letter-hi hw">Dear Moti❤️,</p><p class="letter-body">I know sometimes I talk rudely or act in an unfriendly way, and maybe it hurts you sometimes.<br>But trust me, I never intend to hurt you. Every word I say has a reason, a concern, or a story behind it — even if I’m bad at expressing it softly.<br>But after everything, one thing will always stay true — I genuinely care about you a lot. You’ll always be my sweet little moti sister, someone I’ll protect, support, and love unconditionally.<br>Maybe I won’t always be there during your happiest moments, but in your bad days, worst situations, or whenever life feels heavy… you’ll always find me standing beside you.<br>Because I’m your brother.And that’s what brothers do. ✨</p><p class="letter-sign hw">With all the love,<br>Atharva 🤍</p></div></div></div>
+                    <div class="letter-card aoe" id="letter2"><div class="envelope" onclick="openLetter('letter2')"><div class="env-flap"></div><div class="env-body"><span class="env-label">From: Friend 2</span><span class="env-emoji">💌</span><span class="env-hint">tap to open</span></div></div><div class="letter-content"><div class="letter-paper"><button class="lclose" onclick="closeLetter('letter2')">✕</button><p class="letter-hi hw">Hey Birthday Girl!</p><p class="letter-body">I can't believe another year has gone by. You've grown so much and I'm so proud of you. Thank you for being the most supportive, hilarious, and genuine friend anyone could ask for!</p><p class="letter-sign hw">Cheers to you!<br>— Friend 2 💗</p></div></div></div>
+                    <div class="letter-card aoe" id="letter3"><div class="envelope" onclick="openLetter('letter3')"><div class="env-flap"></div><div class="env-body"><span class="env-label">From: Friend 3</span><span class="env-emoji">💌</span><span class="env-hint">tap to open</span></div></div><div class="letter-content"><div class="letter-paper"><button class="lclose" onclick="closeLetter('letter3')">✕</button><p class="letter-hi hw">Kartavya!</p><p class="letter-body">Happy happy birthday! That's what friendship with you feels like — pure joy for no reason. You deserve the entire world and then some. Keep being you.</p><p class="letter-sign hw">Always your friend,<br>— Friend 3 ⭐</p></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 5: SAKURA -->
+    <section class="screen" id="screen5">
+        <div class="screen-inner center-content">
+            <div class="sakura-page">
+                <button class="back-btn" onclick="goToScreen(2)">← Back to Hub</button>
+                <div class="petals-container" id="petalsContainer"></div>
+                <header class="page-header aoe"><p class="hw">a blooming wish for you 🌸</p><h2 class="page-title">Your Sakura Tree</h2><p class="page-sub">Each petal carries a wish from us</p></header>
+                <div class="sakura-scene aoe">
+                    <div class="tree-container">
+                        <svg class="sakura-tree" viewBox="0 0 400 500" fill="none">
+                            <path d="M190 500 L190 320 Q185 280 170 260 Q150 230 160 200 Q165 180 180 170" stroke="#8B5E3C" stroke-width="18" fill="none" stroke-linecap="round"/>
+                            <path d="M200 500 L200 330 Q210 290 220 270 Q240 240 235 210 Q230 190 220 175" stroke="#8B5E3C" stroke-width="14" fill="none" stroke-linecap="round"/>
+                            <path d="M170 260 Q130 240 100 250" stroke="#8B5E3C" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            <path d="M175 220 Q140 190 110 195" stroke="#8B5E3C" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            <path d="M220 250 Q260 230 290 240" stroke="#8B5E3C" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            <path d="M225 210 Q260 185 290 190" stroke="#8B5E3C" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            <path d="M180 180 Q160 140 140 130" stroke="#8B5E3C" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            <path d="M215 180 Q240 140 260 130" stroke="#8B5E3C" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            <circle cx="100" cy="245" r="30" fill="#FFB6D9" opacity=".7"/><circle cx="85" cy="255" r="22" fill="#FF8FBB" opacity=".6"/>
+                            <circle cx="110" cy="190" r="28" fill="#FFB6D9" opacity=".7"/><circle cx="95" cy="200" r="20" fill="#FFCCE0" opacity=".6"/>
+                            <circle cx="290" cy="235" r="30" fill="#FFB6D9" opacity=".7"/><circle cx="305" cy="245" r="22" fill="#FF8FBB" opacity=".6"/>
+                            <circle cx="290" cy="185" r="28" fill="#FFB6D9" opacity=".7"/><circle cx="305" cy="195" r="18" fill="#FFCCE0" opacity=".6"/>
+                            <circle cx="140" cy="125" r="32" fill="#FFB6D9" opacity=".7"/><circle cx="125" cy="115" r="24" fill="#FF8FBB" opacity=".6"/>
+                            <circle cx="260" cy="125" r="32" fill="#FFB6D9" opacity=".7"/><circle cx="275" cy="115" r="24" fill="#FF8FBB" opacity=".6"/>
+                            <circle cx="195" cy="150" r="35" fill="#FFB6D9" opacity=".7"/><circle cx="195" cy="135" r="28" fill="#FFCCE0" opacity=".65"/>
+                            <circle cx="180" cy="100" r="26" fill="#FF8FBB" opacity=".5"/><circle cx="210" cy="95" r="24" fill="#FFB6D9" opacity=".6"/>
+                            <circle cx="195" cy="80" r="30" fill="#FFCCE0" opacity=".5"/>
+                            <circle cx="90" cy="240" r="5" fill="#fff" opacity=".8"/><circle cx="110" cy="250" r="4" fill="#fff" opacity=".7"/>
+                            <circle cx="300" cy="240" r="5" fill="#fff" opacity=".8"/><circle cx="280" cy="230" r="4" fill="#fff" opacity=".7"/>
+                            <circle cx="140" cy="120" r="5" fill="#fff" opacity=".8"/><circle cx="260" cy="120" r="5" fill="#fff" opacity=".8"/>
+                            <circle cx="195" cy="130" r="6" fill="#fff" opacity=".8"/>
+                        </svg>
+                        <div class="tree-ground"></div>
+                    </div>
+                </div>
+                <div class="flower-wishes aoe">
+                    <div class="flower-wish"><span class="fw-petal">🌸</span><p class="fw-text">May your year bloom with happiness</p></div>
+                    <div class="flower-wish"><span class="fw-petal">🌺</span><p class="fw-text">May every day bring you closer to your dreams</p></div>
+                    <div class="flower-wish"><span class="fw-petal">🏵️</span><p class="fw-text">May you always find reasons to smile</p></div>
+                    <div class="flower-wish"><span class="fw-petal">💮</span><p class="fw-text">May love surround you in every season</p></div>
+                </div>
+                <div class="sakura-audio glass-card aoe">
+                    <p class="hw" style="font-size:1.2rem;margin-bottom:.8rem">🎶 A melody for this moment</p>
+                    <audio id="sakuraAudio" src="nastelbom-happy-birthday-469282.mp3" preload="auto"></audio>
+                    <div class="sa-player"><button class="play-btn" id="sakuraPlayBtn" onclick="toggleSakuraAudio()">▶</button><div class="sa-bar" id="sakuraBar" onclick="seekSakura(event)"><div class="sa-fill" id="sakuraFill"></div></div><span class="sa-time" id="sakuraTime">0:00</span></div>
+                    <p class="sa-note">🌸 Close your eyes and feel the blossoms 🌸</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN 6: GIFT -->
+    <section class="screen" id="screen6">
+        <div class="screen-inner scroll-content">
+            <div class="page-container" style="max-width:650px">
+                <button class="back-btn" onclick="goToScreen(2)">← Back to Hub</button>
+                <header class="page-header aoe"><p class="hw">the final surprise 🎁</p><h2 class="page-title">A Song For You</h2><p class="page-sub">We wrote & made this just for you, press play 🎶</p></header>
+                <div class="gift-section aoe">
+                    <div class="glass-card gift-card">
+                        <div class="vinyl-wrap"><div class="vinyl" id="vinylDisc"><div class="vinyl-label"><span class="vt">🎵</span><span class="vs">For Kartavya</span></div><div class="vg g1"></div><div class="vg g2"></div><div class="vg g3"></div></div></div>
+                        <div class="player-info"><h3 class="song-title" id="songTitle">Happy Birthday 💖</h3><p class="song-artist">By Atharva &amp; Friends</p></div>
+                        <audio id="giftAudio" src="kartvya.mp3" preload="auto"></audio>
+                        <div class="audio-player active">
+                            <div class="player-ctrls"><button class="play-btn" id="playPauseBtn" onclick="toggleGiftSong()">▶</button></div>
+                            <div class="progress-bar" id="progressBar" onclick="seekAudio(event)"><div class="progress-fill" id="progressFill"></div></div>
+                            <div class="time-row"><span id="currentTime">0:00</span><span id="totalTime">0:00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LYRICS KARAOKE -->
+                <div class="lyrics-section">
+                    <div class="glass-card lyrics-card">
+                        <div class="lyrics-header">
+                            <span class="lyrics-icon">🎤</span>
+                            <p class="hw" style="font-size:1.3rem;margin-bottom:0">Lyrics</p>
+                        </div>
+                        <div class="lyrics-container" id="lyricsContainer">
+                            <div class="lyric-line" data-time="0">Happy Birthday 💖</div>
+                            <div class="lyric-line" data-time="4"></div>
+                            <div class="lyric-line" data-time="11">Pata nahi kaise tu itni special ban gayi,</div>
+                            <div class="lyric-line" data-time="16">six months mein hi meri comfort place ban gayi.</div>
+                            <div class="lyric-line" data-time="25">Teri hasi seee mood bhi bright ho jata hai,</div>
+                            <div class="lyric-line" data-time="31">Aur har random moment memory ban jati hai. ✨</div>
+                            <div class="lyric-line" data-time="39"></div>
+                            <div class="lyric-line" data-time="41">Same vibes, same energy, same crazy rides,</div>
+                            <div class="lyric-line" data-time="45">Archery sessions and those peaceful long drives.</div>
+                            <div class="lyric-line" data-time="50">Travelling talks, ya vo bike rides ki planes,</div>
+                            <div class="lyric-line" data-time="57">Sach bolu… time tere saath fast nikal ja ta ha sweet. 🏹🏍️</div>
+                            <div class="lyric-line" data-time="63"></div>
+                            <div class="lyric-line" data-time="64">Aur ek baat tu hamesha yaad rakhna,</div>
+                            <div class="lyric-line" data-time="67">Tujhe kabhi bhi akela nahi padne dunga.</div>
+                            <div class="lyric-line" data-time="71">Happy ho ya low, I'll stay right there,</div>
+                            <div class="lyric-line" data-time="74">Because for you, I'll always care. 💖</div>
+                            <div class="lyric-line" data-time="78"></div>
+                            <div class="lyric-line" data-time="81">Again Happy Birthday meri little sister,</div>
+                            <div class="lyric-line" data-time="85">Tu life ka ek beautiful twist hai princess.</div>
+                            <div class="lyric-line" data-time="88">Bas hamesha aise hi smile karti rehna,</div>
+                            <div class="lyric-line" data-time="92">Aur meri favourite motiii bani rehna. ✨</div>
+                            <div class="lyric-line" data-time="96">Happy Birthday my sweet little princess! 💖</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-msg-bottom">
+                    <div class="glass-card" style="text-align:center;padding:1.5rem">
+                        <div class="divider"><span class="dv-dot"></span><span class="dv-line"></span><span class="dv-star">🤍</span><span class="dv-line"></span><span class="dv-dot"></span></div>
+                        <p class="hw" style="font-size:1.3rem">Happy Birthday, Kartavya. You deserve the world. 🌍✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="burst-container" id="burstContainer"></div>
+    <script src="script.js?v=2"></script>
+</body>
+</html>
