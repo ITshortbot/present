@@ -64,7 +64,7 @@ const riddleInput=document.getElementById('riddleInput');
 const riddleSubmit=document.getElementById('riddleSubmit');
 const riddleHint=document.getElementById('riddleHint');
 const gateOverlay=document.getElementById('gateOverlay');
-const acceptedAnswers=['little sister','friend','sister','lil sister','choti sister','best friend'];
+const acceptedAnswers=['little sister','friend','sister','lil sister','choti sister','best friend','moti','bahana'];
 let riddleSolved=false;
 
 riddleSubmit.addEventListener('click',checkRiddle);
