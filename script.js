@@ -93,7 +93,7 @@ goToScreen(2);
 gateOverlay.classList.remove('active','opening');
 },4200);
 }else{
-riddleHint.textContent='Hmm, not quite... try again! 💭';
+riddleHint.textContent='Hmm, not quite... try again! 💭 (sister)';
 riddleHint.className='riddle-hint wrong';
 // Re-trigger shake
 riddleHint.style.animation='none';
